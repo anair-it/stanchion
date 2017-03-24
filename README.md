@@ -30,7 +30,7 @@ Prerequisites
 2. Tomcat 7.x or Pivotal tcServer 3.x
 3. Maven 3.x
 4. Enable JMX for tomcat/tcServer
-
+5. This is more geared for environments that use tomcat, log4j2, hazelcast distributed caching and Apache Camel
 
 ---
 Getting started
@@ -74,8 +74,8 @@ Follow below mandatory steps:
 	</build>	
 
 6.By default, the application gets all JMX privileges. Add the jvm arg __-Djolokia.policy.type=ro__ to disable JMX write and execute privileges     
-7. The support console web components is overlayed into your application
-7.Hit url _http://{host name}:{port}/{context root}/stanchion/index.jsp_ and IT support console will be displayed
+7. The support console web components is overlayed into your application         
+8.Hit url _http://{host name}:{port}/{context root}/stanchion/index.jsp_ and IT support console will be displayed
 
 Health check
 ---
