@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.anair.stanchion</groupId>
+		<artifactId>stanchion</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>stanchion-web</artifactId>
+	<packaging>war</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>io.hawt</groupId>
+			<artifactId>hawtio-base</artifactId>
+			<version>${hawtio.version}</version>
+			<type>war</type>
+			<scope>runtime</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<overlays>
+						<overlay>
+							<targetPath>stanchion/hawtio</targetPath>
+							<groupId>io.hawt</groupId>
+							<artifactId>hawtio-base</artifactId>
+							<excludes>
+								<exclude>test.*</exclude>
+								<exclude>manifest.json</exclude>
+								<exclude>log4j.properties</exclude>
+								<exclude>META-INF/maven/**</exclude>
+								<exclude>WEB-INF/classes/springbatch.properties</exclude>
+								<exclude>WEB-INF/wro.*</exclude>
+								<exclude>WEB-INF/classes/jolokia*.xml</exclude>
+								<exclude>WEB-INF/lib/jolokia-core*.jar</exclude>
+								<exclude>WEB-INF/lib/json-simple*.jar</exclude>
+								<exclude>WEB-INF/lib/slf4j*.jar</exclude>
+								<exclude>WEB-INF/lib/hawtio-git*.jar</exclude>
+								<exclude>WEB-INF/lib/org.apache.aries.blueprint*.jar</exclude>
+								<exclude>app/*.md</exclude>
+								<exclude>app/*/doc/**</exclude>
+							</excludes>
+						</overlay>
+					</overlays>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

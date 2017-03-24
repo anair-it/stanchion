@@ -1,0 +1,6 @@
+target
+/core/target
+/web/target
+/web/src/main/webapp/stanchion/template/index.tmpl.jsp
+/web/src/main/webapp/stanchion/css
+/web/src/main/webapp/stanchion/components

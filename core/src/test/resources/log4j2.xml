@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration name="stanchion-core-test">
+	<Appenders>
+		<Console name="console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%m%n" />
+		</Console>
+		
+		<Async name="async">
+			<AppenderRef ref="console" />
+		</Async>
+	</Appenders>
+
+	<Loggers>
+    	<logger name="org.anair.stanchion" level="info"/>
+		<logger name="org.springframework" level="error" />
+		<logger name="org.hibernate" level="error" />
+		<logger name="org.apache" level="error" />
+		
+		<Root level="debug">
+			<AppenderRef ref="async" />
+		</Root>
+		
+	</Loggers>
+</Configuration>

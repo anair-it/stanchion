@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.anair.stanchion</groupId>
+	<artifactId>stanchion</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+
+	<name>Stanchion Project</name>
+	<description>
+		Pluggable IT Support console for a Tomcat application. Includes http://hawt.io/
+	</description>
+	<inceptionYear>2017</inceptionYear>
+
+	<developers>
+		<developer>
+			<name>Anoop Nair</name>
+			<email>anoopnair.it@gmail.com</email>
+		</developer>
+	</developers>
+
+	<properties>
+		<spring.version>4.3.7.RELEASE</spring.version>
+		<slf4j.version>1.7.25</slf4j.version>
+		<jolokia.version>1.3.5</jolokia.version>
+		<spring.batch.version>3.0.7.RELEASE</spring.batch.version>
+		<curator.version>2.11.0</curator.version>
+		<hawtio.version>1.4.14</hawtio.version>
+		<hazelcast.version>3.7.5</hazelcast.version>
+		<camel.version>2.18.2</camel.version>
+		<log4j2.version>2.7</log4j2.version>
+		<guava.version>21.0</guava.version>
+		<servlet.version>3.0.1</servlet.version>
+		<jstl.version>1.2.5</jstl.version>
+		<jackson.version>2.8.7</jackson.version>
+		<commons-lang3.version>3.5</commons-lang3.version>
+		<commons-configuration.version>1.10</commons-configuration.version>
+		<commons-io.version>2.5</commons-io.version>
+		<commons-dbcp2.version>2.1.1</commons-dbcp2.version>
+
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.7.8</version>
+				<executions>
+					<execution>
+						<id>pre-unit-test</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+						<configuration>
+						</configuration>
+					</execution>
+					<execution>
+						<id>unit-test-report</id>
+						<phase>test</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<additionalparam>-Xdoclint:none</additionalparam>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin> <!-- http://maven.apache.org/enforcer/enforcer-rules/index.html -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>1.4.1</version>
+				<executions>
+					<execution>
+						<id>enforce-java8</id>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<requireJavaVersion>
+									<message>Use JDK &gt;= 1.8.0</message>
+									<version>[1.8.0,)</version>
+								</requireJavaVersion>
+							</rules>
+							<fail>true</fail>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<modules>
+		<module>core</module>
+		<module>web</module>
+	</modules>
+</project>

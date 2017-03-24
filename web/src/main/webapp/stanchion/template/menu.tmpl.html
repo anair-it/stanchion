@@ -1,0 +1,24 @@
+<!-- Define menu items here -->
+
+<div app-navbar class="shadow">
+    <li ng-class="{ active: isActive('#/server')}"><a ui-sref="server">Server Info</a></li>
+    <li><a ui-sref="healthcheck">Health Check</a> </li>
+    <li class="dropdown">
+    	<a class="dropdown-toggle" data-toggle="dropdown">Properties<span class="caret"></span></a>
+    	<ul class="dropdown-menu">
+    		<li ng-class="{ active: isActive('#/sysprops')}"><a ui-sref="sysprops">Server Properties</a></li>
+    		<li ng-class="{ active: isActive('#/config')}"><a ui-sref="config">Database-driven Properties</a></li>
+    	</ul>
+    </li>
+    <li class="dropdown">
+    	<a class="dropdown-toggle" data-toggle="dropdown">Manage<span class="caret"></span></a>
+    	<ul class="dropdown-menu">
+    		<li ng-class="{ active: isActive('#/logging')}"><a ui-sref="logging">Logging</a></li>
+    		<li ng-class="{ active: isActive('#/caching')}"><a ui-sref="caching">Cache</a></li>
+    		<li ng-class="{ active: isActive('#/camel-jms')}"><a ui-sref="camel-jms">Camel JMS Consumer</a></li>
+    		<li ng-class="{ active: isActive('#/spring-jms')}"><a ui-sref="spring-jms">Spring JMS Consumer</a></li>
+    	</ul>
+    </li>
+    <li><a href="hawtio/index.html" target="_blank">Hawtio</a></li>
+    <li><a ui-sref="springBatch">Spring Batch</a> </li>
+</div>
