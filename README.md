@@ -90,6 +90,5 @@ Notes
 ---
 - If you do not have Spring batch job in the project, the UI show an info message. This is expected behavior.
 - If you do not have a database-driven configuration setup, you will see an info message in the UI. This is expected behavior.
-- For more technical details, refer [DEVELOPER.md](DEVELOPER.md) 
 - For release notes, refer [CHANGELOG.md](CHANGELOG.md)
 
