@@ -5,7 +5,7 @@ Pluggable IT support console for tomcat/tcServer applications. Follow few simple
 Features
 --- 
 1. __Server Info__: (Read-only) Display server name, host, port, JVM uptime etc
-2. __Health check__: (Read-only) Identifies MQ Connection Factories, DataSource(s) and Zookeeper connection in the app, perform a health check and display a color-coded GOOD/BAD status
+2. __Health check__: (Read-only) Identifies IBM MQ Connection Factories, DataSource(s) and Zookeeper connection in the app, perform a health check and display a color-coded GOOD/BAD status
 3. __Server Properties__: (Read-only) Display JVM and tomcat properties 
 4. __App properties__: (Read-only) Display environment properties externalized to app.properties file 
 5. __Database-driven properties__: Create, update, delete and view database-driven configuration. Assuming a table called CONFIG_VALUES that has KEY column and VALUE column, add the following spring bean configuration in the classpath:
@@ -38,7 +38,7 @@ Getting started
 Follow below mandatory steps: 
 1. Download this project
 2. Do a `mvn clean install` on the project
-3. Add maven dependency to your webapp pom:
+3. Add maven dependency to your web application pom:
 
 		<dependency>
 			<groupId>org.anair.stanchion</groupId>
@@ -73,7 +73,8 @@ Follow below mandatory steps:
 	...
 	</build>	
 
-6.By default, the application gets all JMX privileges. Add __-Djolokia.policy.type=ro__ to disable JMX write and execute privileges     
+6.By default, the application gets all JMX privileges. Add the jvm arg __-Djolokia.policy.type=ro__ to disable JMX write and execute privileges     
+7. The support console web components is overlayed into your application
 7.Hit url _http://{host name}:{port}/{context root}/stanchion/index.jsp_ and IT support console will be displayed
 
 Health check
