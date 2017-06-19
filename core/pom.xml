@@ -9,9 +9,6 @@
 	<artifactId>stanchion-core</artifactId>
 	<packaging>jar</packaging>
 
-	<properties>
-
-	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>javax.servlet</groupId>
